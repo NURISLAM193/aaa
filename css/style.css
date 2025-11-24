@@ -1,0 +1,220 @@
+/* Основные цвета */
+:root {
+  --dark-brown: #2C1810;
+  --medium-brown: #4A2C21;
+  --light-brown: #8B5A44;
+  --cream: #F5E6DC;
+  --text-light: #F8F3F0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--dark-brown);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.container {
+  width: 85%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Шапка */
+header {
+  background-color: var(--medium-brown);
+  color: var(--cream);
+  text-align: center;
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  border-radius: 0 0 15px 15px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+
+/* Навигация */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.header-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header-nav a:hover {
+  background: var(--light-brown);
+  color: var(--dark-brown);
+}
+
+/* Основной макет */
+.coffee-layout {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.coffee-display,
+.coffee-menu {
+  flex: 1;
+}
+
+.coffee-display {
+  background: var(--medium-brown);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  min-height: 400px;
+}
+
+#coffee-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--light-brown);
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#coffee-title {
+  color: var(--cream);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#coffee-desc {
+  color: var(--cream);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+#coffee-ingredients {
+  text-align: left;
+  color: var(--cream);
+  list-style: none;
+}
+
+#coffee-ingredients li {
+  background: var(--light-brown);
+  margin: 6px 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.coffee-menu h2 {
+  color: var(--cream);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.coffee-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  background: var(--light-brown);
+  color: var(--dark-brown);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.coffee-btn:hover {
+  background: var(--cream);
+  transform: translateY(-2px);
+}
+
+.coffee-btn:active {
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+  color: var(--cream);
+  font-size: 0.9rem;
+  background: var(--medium-brown);
+  border-radius: 15px 15px 0 0;
+}
+/* === Гибкая шапка: логотип слева, навигация справа === */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo h1 {
+  color: var(--cream);
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+/* === ШАПКА: логотип слева, ссылки справа === */
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo h1 {
+  color: #F5E6DC; /* кремовый */
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links a {
+  color: #F5E6DC;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #8B5A44; /* светло-коричневый */
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #F5E6DC;
+  color: #2C1810;
+  transform: translateY(-2px);
+}

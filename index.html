@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>КофеНи</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+  <div class="container header-wrapper">
+    <!-- Логотип слева -->
+    <div class="logo">
+      <h1>☕ КофеНи</h1>
+    </div>
+
+    <!-- Навигация справа -->
+    <nav class="nav-links">
+      <a href="#menu">Меню</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#about">О нас</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="container">
+    <!-- Двухколоночный макет -->
+    <div class="coffee-layout">
+      <!-- Левая часть: информация о кофе -->
+      <section class="coffee-display">
+        <div id="coffee-info">
+          <img src="https://i.imgur.com/8Ttzj1r.jpg" alt="Эспрессо" id="coffee-img">
+          <h2 id="coffee-title">Эспрессо</h2>
+          <p id="coffee-desc">
+            Крепкий и насыщенный напиток, приготовленный под высоким давлением. 
+            Идеален для тех, кто ценит чистый вкус кофе.
+          </p>
+          <ul id="coffee-ingredients">
+            <li>100% арабика</li>
+            <li>Горячая вода (90–96°C)</li>
+            <li>Время заваривания: 25–30 сек</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Правая часть: выбор кофе -->
+      <aside class="coffee-menu">
+        <h2>Выберите кофе</h2>
+        <button class="coffee-btn" onclick="showCoffee('espresso')">Эспрессо</button>
+        <button class="coffee-btn" onclick="showCoffee('latte')">Латте</button>
+        <button class="coffee-btn" onclick="showCoffee('cappuccino')">Капучино</button>
+        <button class="coffee-btn" onclick="showCoffee('americano')">Американо</button>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 КофеНи. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Скрипт для переключения кофе -->
+  <script>
+    const coffeeData = {
+      espresso: {
+        title: "Эспрессо",
+        desc: "Крепкий и насыщенный напиток, приготовленный под высоким давлением. Идеален для тех, кто ценит чистый вкус кофе.",
+        ingredients: ["100% арабика", "Горячая вода (90–96°C)", "Время заваривания: 25–30 сек"],
+        img: "https://i.imgur.com/8Ttzj1r.jpg"
+      },
+      latte: {
+        title: "Латте",
+        desc: "Нежный напиток из эспрессо и вспененного молока. Сливочная текстура и мягкий вкус.",
+        ingredients: ["Эспрессо", "Молоко (70%)", "Молочная пена (20%)", "Сироп (по желанию)"],
+        img: "https://i.imgur.com/3k8qf5X.jpg"
+      },
+      cappuccino: {
+        title: "Капучино",
+        desc: "Классический итальянский кофе с пышной молочной пеной. Идеальное соотношение: 1/3 эспрессо, 1/3 молоко, 1/3 пена.",
+        ingredients: ["Эспрессо", "Тёплое молоко", "Воздушная молочная пена", "Какао (по желанию)"],
+        img: "https://i.imgur.com/mD7fF5a.jpg"
+      },
+      americano: {
+        title: "Американо",
+        desc: "Простой и чистый кофе — эспрессо, разбавленный горячей водой. Сохраняет насыщенный вкус, но менее крепкий.",
+        ingredients: ["Эспрессо", "Горячая вода (в пропорции 1:2 или 1:3)", "Лёд (для холодного варианта)"],
+        img: "https://i.imgur.com/8Ttzj1r.jpg"
+      }
+    };
+
+    function showCoffee(type) {
+      const coffee = coffeeData[type];
+      document.getElementById("coffee-title").textContent = coffee.title;
+      document.getElementById("coffee-desc").textContent = coffee.desc;
+      document.getElementById("coffee-img").src = coffee.img;
+
+      const ingredientsList = document.getElementById("coffee-ingredients");
+      ingredientsList.innerHTML = "";
+      coffee.ingredients.forEach(ing => {
+        const li = document.createElement("li");
+        li.textContent = ing;
+        ingredientsList.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+
+
