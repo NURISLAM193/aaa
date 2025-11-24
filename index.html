@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Сапёр</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💣 Сапёр</h1>
+        <p class="subtitle">Правый клик — флаг | Левый — открывать</p>
+
+       <div class="controls">
+    <div class="difficulty-buttons">
+        <button class="easy" onclick="setDifficulty('easy')">Лёгкий</button>
+        <button class="medium" onclick="setDifficulty('medium')">Средний</button>
+        <button class="hard" onclick="setDifficulty('hard')">Сложный</button>
+    </div>
+
+    <div class="custom-inputs">
+        <label>Ширина: <input type="number" id="width" value="9" min="5" max="30"></label>
+        <label>Высота: <input type="number" id="height" value="9" min="5" max="30"></label>
+        <label>Мины: <input type="number" id="mines" value="10" min="1"></label>
+    </div>
+
+    <!-- Обёртка для центрирования кнопки -->
+    <div class="button-center">
+        <button class="custom" onclick="startGame()">Новая игра</button>
+    </div>
+</div>
+
+
+        <div class="record">
+            🏆 Рекорд: <span id="record">—</span>
+        </div>
+
+        <div id="game-container" class="grid"></div>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
